@@ -20,7 +20,7 @@ type LogBody struct {
 
 func PrintLog(logBody LogBody) {
 	fmt.Printf(
-		"MDOpsGW | %s | %7s | %25s | %s \n",
+		"Log | %s | %7s | %25s | %s \n",
 		time.Now().Format("2006-01-02 15:04:05"),
 		logBody.Level,
 		logBody.Name,
