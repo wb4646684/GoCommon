@@ -25,7 +25,7 @@ func init() {
 	Config = parseConfig(*ConfigFile)
 	log.PrintLog(log.LogBody{
 		Name:    "init",
-		Message: fmt.Sprint("Load config: ", Config),
+		Message: fmt.Sprint("Load config: ", *Config),
 		Level:   log.INFO,
 	})
 }
