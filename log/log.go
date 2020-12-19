@@ -37,7 +37,7 @@ func StringToNumber(s string) int {
 }
 
 func SetLevel(level string) {
-	if level != "" {
+	if level != "" || StringToNumber(level) != 0 {
 		Level = level
 	} else {
 		Level = INFO
