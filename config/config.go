@@ -29,7 +29,7 @@ func init() {
 	)
 	flag.Parse()
 	Config = parseConfig(*ConfigFile)
-	log.PrintLog(log.LogBody{
+	log.AddLog(log.LogBody{
 		Name:    "init",
 		Message: fmt.Sprintf("Load config: %+v", *Config),
 		Level:   log.INFO,
