@@ -19,7 +19,7 @@ type LogBody struct {
 	Level   string
 }
 
-var Level = INFO
+var Level = ""
 
 func StringToNumber(s string) int {
 	switch {
@@ -37,7 +37,11 @@ func StringToNumber(s string) int {
 }
 
 func SetLevel(level string) {
-	Level = level
+	if level != "" {
+		Level = level
+	} else {
+		Level = INFO
+	}
 }
 
 func PrintLog(logBody LogBody) {

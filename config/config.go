@@ -22,6 +22,7 @@ type Log struct {
 var Config *configYAML
 
 func init() {
+
 	ConfigFile := flag.String(
 		"config",
 		"config/config.yaml",
@@ -29,6 +30,7 @@ func init() {
 	)
 	flag.Parse()
 	Config = parseConfig(*ConfigFile)
+	log.SetLevel(Config.Log.Level)
 	log.AddLog(log.LogBody{
 		Name:    "init",
 		Message: fmt.Sprintf("Load config: %+v", *Config),
