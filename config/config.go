@@ -9,8 +9,14 @@ import (
 )
 
 type configYAML struct {
-	Host string `yaml:"host"`
-	Port string `yaml:"port"`
+	Host    string `yaml:"host"`
+	Port    string `yaml:"port"`
+	Webhook string `yaml:"webhook"`
+	Log     Log    `yaml:"log"`
+}
+
+type Log struct {
+	Level string `yaml:"level"`
 }
 
 var Config *configYAML
@@ -25,7 +31,7 @@ func init() {
 	Config = parseConfig(*ConfigFile)
 	log.PrintLog(log.LogBody{
 		Name:    "init",
-		Message: fmt.Sprint("Load config: ", *Config),
+		Message: fmt.Sprintf("Load config: %+v", *Config),
 		Level:   log.INFO,
 	})
 }
