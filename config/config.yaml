@@ -1,5 +1,6 @@
 host:
 port:
 webhook:
+interval:
 log:
   level:
