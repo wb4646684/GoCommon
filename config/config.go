@@ -6,14 +6,15 @@ import (
 	"github.com/wb4646684/GoCommon/log"
 	"gopkg.in/yaml.v2"
 	"io/ioutil"
+	"time"
 )
 
 type configYAML struct {
-	Host     string `yaml:"host"`
-	Port     string `yaml:"port"`
-	Webhook  string `yaml:"webhook"`
-	Interval int    `yaml:"interval"`
-	Log      Log    `yaml:"log"`
+	Host     string        `yaml:"host"`
+	Port     string        `yaml:"port"`
+	Webhook  string        `yaml:"webhook"`
+	Interval time.Duration `yaml:"interval"`
+	Log      Log           `yaml:"log"`
 }
 
 type Log struct {
